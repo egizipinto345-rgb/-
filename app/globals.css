@@ -256,6 +256,8 @@ a:focus-visible, button:focus-visible, textarea:focus-visible {
 .ai-poster img { display: block; width: 100%; height: auto; }
 .ai-poster figcaption { margin-top: 14px; font-size: 11px; color: var(--ocean-muted); text-align: center; }
 .team-section { padding-top: 8px; padding-bottom: 100px; }
+.team-section.team-page { padding-block: 64px 100px; }
+.team-page .section-heading h1 { font-size: clamp(30px, 3.4vw, 46px); font-weight: 600; letter-spacing: -.04em; line-height: 1.35; margin-top: 12px; }
 .team-board { background: var(--ocean-ink); color: #f4f8f7; border-radius: 4px; padding: 44px 48px 48px; display: grid; grid-template-columns: .86fr 1.62fr; gap: 44px; align-items: start; }
 .team-poster { margin: 0; }
 .team-poster a { display: block; border-radius: 4px; overflow: hidden; border: 1px solid rgba(244,248,247,.16); transition: border-color .2s; }
@@ -327,6 +329,7 @@ a:focus-visible, button:focus-visible, textarea:focus-visible {
 	.ai-grid { grid-template-columns: 1fr; gap: 40px; }
 	.ai-poster { position: static; }
 	.team-section { padding-bottom: 64px; }
+	.team-section.team-page { padding-block: 44px 64px; }
 	.team-board { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
 	.team-poster { max-width: 380px; margin-inline: auto; }
 	.cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

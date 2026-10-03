@@ -13,12 +13,12 @@ const certifications = [
 
 export function Personnel() {
 	return (
-		<section id="team" className="team-section" aria-labelledby="team-title">
+		<section id="team" className="team-section team-page" aria-labelledby="team-title">
 			<div className="ocean-container">
 				<div className="section-heading">
 					<div>
 						<p className="eyebrow">OUR TEAM / 人员介绍</p>
-						<h2 id="team-title">把想法做成作品的人。</h2>
+						<h1 id="team-title">把想法做成作品的人。</h1>
 					</div>
 					<p className="section-intro">
 						主理人杨子豪，AI 应用实践者。
