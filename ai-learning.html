@@ -5410,6 +5410,59 @@ a:focus-visible, button:focus-visible, textarea:focus-visible {
   }
 }
 :root{--font-geist-sans:'Segoe UI';--font-geist-mono:monospace}.preview-note{background:#eef3ef;color:#526873;font-size:11px;padding:8px 20px;text-align:center}.skip-link:not(:focus){clip-path:inset(100%)}.preview-ai-launcher{position:fixed;right:22px;bottom:22px;z-index:70}.preview-ai-launcher button{display:flex;align-items:center;gap:10px;background:#0a2938;color:#fff;border:0;border-radius:999px;padding:14px 20px;box-shadow:0 8px 28px #0a293844;font:600 14px var(--font-geist-sans),sans-serif;cursor:pointer}.preview-ai-panel{position:fixed;z-index:70;right:22px;bottom:84px;width:min(368px,calc(100vw - 32px));border:1px solid #dbe5e2;border-radius:14px;box-shadow:0 14px 50px #0a293833;background:#fff;color:#0a2938;overflow:hidden}.preview-ai-panel header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #dbe5e2}.preview-ai-panel header div{display:flex;flex-direction:column;gap:5px}.preview-ai-panel header strong{font-size:14px}.preview-ai-panel header span,.preview-ai-label{font-size:11px;color:#526873}.preview-ai-panel header button{border:0;background:transparent;font-size:23px;color:#526873;cursor:pointer}.preview-ai-message{margin:18px;background:#f4f7f6;border-radius:12px 12px 12px 3px;padding:16px;font-size:13px;line-height:1.85}.preview-ai-message p{margin-top:10px}.preview-ai-message a{display:inline-block;margin-top:14px;color:#fff;background:#0a2938;text-decoration:none;border-radius:5px;padding:10px 13px}.preview-mobile-nav{display:none}.preview-mobile-nav.open{display:flex;position:fixed;top:110px;left:20px;right:20px;z-index:80;background:white;border:1px solid #dbe5e2;padding:20px;gap:20px;flex-direction:column}.preview-image-dialog{max-width:90vw;max-height:90dvh;padding:12px;border:0;border-radius:4px;position:fixed;margin:auto;inset:0}.preview-image-dialog::backdrop{background:#0a2938b0}.preview-image-dialog img{display:block;max-width:80vw;max-height:80dvh;width:auto;height:auto}.preview-image-dialog button{display:block;margin:0 0 8px auto;font-size:13px;padding:6px 12px}@media(max-width:480px){.preview-ai-launcher{right:14px;bottom:14px}.preview-ai-panel{right:14px;bottom:72px;width:calc(100vw - 28px)}}
+/* 人员介绍 */
+.team-section { padding-top: 8px; padding-bottom: 100px; }
+.team-board {
+  background: var(--ocean-ink);
+  color: #f4f8f7;
+  border-radius: 4px;
+  padding: 44px 48px 48px;
+  display: grid;
+  grid-template-columns: .86fr 1.62fr;
+  gap: 44px;
+  align-items: start;
+}
+.team-poster { margin: 0; }
+.team-poster a { display: block; border-radius: 4px; overflow: hidden; border: 1px solid rgba(244,248,247,.16); }
+.team-poster img { display: block; width: 100%; height: auto; }
+.team-poster figcaption { margin-top: 14px; font-size: 12px; line-height: 1.75; color: rgba(244,248,247,.68); }
+.team-poster figcaption strong { color: #f4f8f7; font-weight: 600; letter-spacing: .04em; }
+.team-certs-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(244,248,247,.16);
+}
+.team-certs-head h3 { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -.01em; color: #f4f8f7; }
+.team-certs-head span { font-size: 11px; color: #96c7bf; }
+.cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 20px; }
+.cert-item { margin: 0; }
+.cert-item a { display: block; border-radius: 3px; overflow: hidden; border: 1px solid rgba(244,248,247,.16); }
+.cert-item img { display: block; width: 100%; height: auto; }
+.cert-item figcaption { margin-top: 9px; font-size: 11px; line-height: 1.55; color: rgba(244,248,247,.66); }
+@media (hover: hover) {
+  .cert-item a { transition: border-color .2s, transform .2s; }
+  .cert-item a:hover { border-color: var(--ocean-teal); transform: translateY(-2px); }
+  .team-poster a { transition: border-color .2s; }
+  .team-poster a:hover { border-color: var(--ocean-teal); }
+}
+@media (max-width: 900px) {
+  .team-section { padding-bottom: 64px; }
+  .team-board { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
+  .team-poster { max-width: 380px; margin-inline: auto; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .team-board { padding: 24px; }
+  .cert-grid { gap: 12px; }
+  .cert-item figcaption { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cert-item a, .team-poster a { transition: none; }
+}
+
 /* AI 学习页 */
 .ai-section { padding-block: 72px 96px; background: #fff; }
 .ai-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
@@ -5435,7 +5488,7 @@ a:focus-visible, button:focus-visible, textarea:focus-visible {
   .qr-box { width: 110px; height: 110px; padding: 6px; }
   .qr-box img { width: 110px; height: 110px; }
 }
-</style></head><body><header class="site-header"><a href="#main-content" class="skip-link">跳转到主要内容</a><div class="ocean-container header-inner"><a aria-label="OceanCast 首页" href="index.html"><span class="brand-mark"><img alt="OceanCast · AI Creative Studio" width="1774" height="887" sizes="242px" src="assets/oceancast-logo.png"/></span></a><div class="header-actions"><button type="button" aria-label="打开导航菜单" class="mobile-menu-button" aria-haspopup="dialog" aria-expanded="false" data-state="closed" data-slot="sheet-trigger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button><nav aria-label="主导航" class="desktop-nav"><a href="ai-learning.html">AI 学习</a><a href="index.html#services">AI 服务</a><a href="index.html#portfolio">作品展示</a><a href="index.html#customer-service">客服咨询</a></nav><a class="header-cta" href="index.html#customer-service">聊聊你的想法 <span aria-hidden="true">↗</span></a></div></div></header><main id="main-content"><section class="ai-section" aria-labelledby="ai-title"><div class="ocean-container ai-grid"><div class="ai-copy"><p class="eyebrow"><span class="eyebrow-dot"></span>OCEANCAST · AI LEARNING</p><h1 id="ai-title">把 <span>AI</span> 学会</h1><p class="ai-lead">系统学 AI，也和我们一起交流。</p><p class="ai-desc">OceanCast 学习小程序已上线体验版。从一句目标出发，AI 会替你铺好学习路径，边学边练，学完就能用到自己的项目里。</p><ul class="ai-features"><li><strong>系统学习</strong><span>说一句目标，AI 为你铺一条学习路。</span></li><li><strong>交流互助</strong><span>和同学一起练、一起用，学完就能上手。</span></li><li><strong>六个方向</strong><span>AI 漫剧 · AI 小说 · AI 生成 PPT · AI 编程 · AI 绘画 · AI 短视频。</span></li></ul><div class="ai-actions"><a href="index.html#customer-service" class="ocean-button">扫码加客服，拉你进学习群 <span aria-hidden="true">↗</span></a><span class="ai-badge">体验版 · 邀你抢先体验</span></div></div><figure class="ai-poster"><a href="assets/poster.webp" target="_blank" rel="noreferrer" aria-label="打开小程序宣传海报大图（新窗口）"><img src="assets/poster.webp" width="1200" height="1700" alt="OceanCast AI 学习小程序宣传海报：把 AI 学会，微信小程序体验版上线"/></a><figcaption>点击海报可查看大图 · 长按保存后可分享</figcaption></figure></div></section></main><footer class="site-footer"><div class="ocean-container footer-inner"><div><a class="footer-wordmark" href="index.html">Ocean<span>Cast</span><span class="footer-ai">AI CREATIVE STUDIO</span></a><p>南京海潮人工智能科技有限公司</p></div><div class="footer-right"><nav aria-label="页脚导航"><a href="ai-learning.html">AI 学习</a><a href="index.html#services">AI 服务</a><a href="index.html#portfolio">作品展示</a><a href="index.html#customer-service">客服咨询</a></nav><p>创意有海，灵感成潮。</p></div></div></footer><nav class="preview-mobile-nav" aria-label="预览导航"><a href="ai-learning.html">AI 学习</a><a href="index.html#services">AI 服务</a><a href="index.html#portfolio">作品展示</a><a href="index.html#customer-service">客服咨询</a></nav><script>
+</style></head><body><header class="site-header"><a href="#main-content" class="skip-link">跳转到主要内容</a><div class="ocean-container header-inner"><a aria-label="OceanCast 首页" href="index.html"><span class="brand-mark"><img alt="OceanCast · AI Creative Studio" width="1774" height="887" sizes="242px" src="assets/oceancast-logo.png"/></span></a><div class="header-actions"><button type="button" aria-label="打开导航菜单" class="mobile-menu-button" aria-haspopup="dialog" aria-expanded="false" data-state="closed" data-slot="sheet-trigger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button><nav aria-label="主导航" class="desktop-nav"><a href="index.html#team">人员介绍</a><a href="ai-learning.html">AI 学习</a><a href="index.html#services">AI 服务</a><a href="index.html#portfolio">作品展示</a><a href="index.html#customer-service">客服咨询</a></nav><a class="header-cta" href="index.html#customer-service">聊聊你的想法 <span aria-hidden="true">↗</span></a></div></div></header><main id="main-content"><section class="ai-section" aria-labelledby="ai-title"><div class="ocean-container ai-grid"><div class="ai-copy"><p class="eyebrow"><span class="eyebrow-dot"></span>OCEANCAST · AI LEARNING</p><h1 id="ai-title">把 <span>AI</span> 学会</h1><p class="ai-lead">系统学 AI，也和我们一起交流。</p><p class="ai-desc">OceanCast 学习小程序已上线体验版。从一句目标出发，AI 会替你铺好学习路径，边学边练，学完就能用到自己的项目里。</p><ul class="ai-features"><li><strong>系统学习</strong><span>说一句目标，AI 为你铺一条学习路。</span></li><li><strong>交流互助</strong><span>和同学一起练、一起用，学完就能上手。</span></li><li><strong>六个方向</strong><span>AI 漫剧 · AI 小说 · AI 生成 PPT · AI 编程 · AI 绘画 · AI 短视频。</span></li></ul><div class="ai-actions"><a href="index.html#customer-service" class="ocean-button">扫码加客服，拉你进学习群 <span aria-hidden="true">↗</span></a><span class="ai-badge">体验版 · 邀你抢先体验</span></div></div><figure class="ai-poster"><a href="assets/poster.webp" target="_blank" rel="noreferrer" aria-label="打开小程序宣传海报大图（新窗口）"><img src="assets/poster.webp" width="1200" height="1700" alt="OceanCast AI 学习小程序宣传海报：把 AI 学会，微信小程序体验版上线"/></a><figcaption>点击海报可查看大图 · 长按保存后可分享</figcaption></figure></div></section></main><footer class="site-footer"><div class="ocean-container footer-inner"><div><a class="footer-wordmark" href="index.html">Ocean<span>Cast</span><span class="footer-ai">AI CREATIVE STUDIO</span></a><p>南京海潮人工智能科技有限公司</p></div><div class="footer-right"><nav aria-label="页脚导航"><a href="index.html#team">人员介绍</a><a href="ai-learning.html">AI 学习</a><a href="index.html#services">AI 服务</a><a href="index.html#portfolio">作品展示</a><a href="index.html#customer-service">客服咨询</a></nav><p>创意有海，灵感成潮。</p></div></div></footer><nav class="preview-mobile-nav" aria-label="预览导航"><a href="index.html#team">人员介绍</a><a href="ai-learning.html">AI 学习</a><a href="index.html#services">AI 服务</a><a href="index.html#portfolio">作品展示</a><a href="index.html#customer-service">客服咨询</a></nav><script>
 	const menu = document.querySelector(".preview-mobile-nav");
 	const trigger = document.querySelector(".mobile-menu-button");
 	trigger?.addEventListener("click", () => {menu.classList.toggle("open");trigger.setAttribute("aria-expanded",menu.classList.contains("open"));});
