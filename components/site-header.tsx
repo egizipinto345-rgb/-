@@ -3,6 +3,7 @@ import { Navbar } from "@/app/navbar";
 import { BrandMark } from "@/components/brand-mark";
 
 export const companyNavLinks = [
+	{ href: "/#team", label: "人员介绍" },
 	{ href: "/ai-learning", label: "AI 学习" },
 	{ href: "/#services", label: "AI 服务" },
 	{ href: "/#portfolio", label: "作品展示" },

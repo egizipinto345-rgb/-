@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-/** 客服二维码：一号在前，二号在后。 */
+/** 客服二维码：子豪在前，嘉烨在后。 */
 const serviceContacts = [
-	{ src: "/contact/kefu-1.png", label: "客服一号" },
-	{ src: "/contact/kefu-2.png", label: "客服二号" },
+	{ src: "/contact/kefu-1.png", label: "子豪" },
+	{ src: "/contact/kefu-2.png", label: "嘉烨" },
 ];
 
 export function CustomerService() {
