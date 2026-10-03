@@ -90,9 +90,16 @@ pnpm exec next start
 
 ## GitHub 与托管
 
-本阶段先准备源码仓库；GitHub 目标仓库地址、公开/私有状态待确认。网站托管方式尚未选择，没有添加自动部署工作流。
+源码仓库：https://github.com/egizipinto345-rgb/oceancast
 
-源码可以放到 GitHub，但这套保留后台的 Next.js 项目需要服务器与私有环境变量，不能直接作为纯静态文件放到 GitHub Pages。选择托管后再配置正式域名、API key、构建命令及运行环境。
+静态预览站点（GitHub Pages，由 `gh-pages` 分支托管）：https://egizipinto345-rgb.github.io/oceancast/
+
+这里要区分两件事：
+
+- Pages 上的是**静态快照**，只呈现视觉页面（首屏、服务、作品、客服二维码），没有购物车、订单、支付和 AI 对话。它由离线预览单页拆分资源得到，不是 Next.js 的构建产物。
+- 完整功能（YNS 后台数据、StoreChat AI 对话）仍需要带服务器与私有环境变量的托管环境，例如 Vercel。GitHub Pages 无法运行这套应用。
+
+静态快照的构成：`index.html`、`assets/`、`oceancast-icon.svg` 和 `.nojekyll`。改过首页文案或素材后，需要重新生成并推送 `gh-pages` 分支才会生效。
 
 上传前确认：`.env.local`、真实密钥、`node_modules`、`.next` 不在 Git 追踪列表。保留原模板的 `LICENSE.md` 版权与许可说明。
 
