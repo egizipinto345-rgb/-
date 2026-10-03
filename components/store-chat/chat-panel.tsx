@@ -127,7 +127,7 @@ export function ChatPanel({
 						<AssistantBubble>{greeting}</AssistantBubble>
 					) : (
 						<AssistantBubble>
-							AI 助手尚未接入。你可以先添加企业微信，把创作需求告诉人工客服；后台接通后，小助手就能帮你了解 AI
+							AI 助手尚未接入。你可以先添加客服微信，把创作需求告诉人工客服；后台接通后，小助手就能帮你了解 AI
 							短剧、海报、PPT 和定制创作。
 						</AssistantBubble>
 					)}
@@ -162,7 +162,7 @@ export function ChatPanel({
 
 					{enabled && error && (
 						<AssistantBubble>
-							AI 助手暂时无法连接。你可以稍后重试，或点击「联系人工客服」，通过企业微信沟通需求。
+							AI 助手暂时无法连接。你可以稍后重试，或点击「联系人工客服」，通过微信沟通需求。
 						</AssistantBubble>
 					)}
 				</div>

@@ -13,6 +13,7 @@ export function Footer() {
 				</div>
 				<div className="footer-right">
 					<nav aria-label="页脚导航">
+						<Link href="/ai-learning">AI 学习</Link>
 						<Link href="/#services">AI 服务</Link>
 						<Link href="/#portfolio">作品展示</Link>
 						<Link href="/#customer-service">客服咨询</Link>

@@ -5,9 +5,10 @@
 ## 首版内容
 
 - 深海蓝与海青色品牌视觉，中文导航与页面信息。
+- 导航首项“AI 学习”：介绍 AI 学习小程序（体验版），展示宣传海报并引导加客服微信。
 - AI 短剧、AI 海报、AI PPT、定制 AI 创作四项服务，价格统一显示“咨询报价”。
 - 作品展示：手作饰品主题视觉（水彩风图像作品）。
-- “客服咨询”：扫码添加企业微信，沟通需求、报价、交付和售后。
+- “客服咨询”：扫码添加客服微信（客服一号、客服二号），沟通需求、报价、交付和售后。
 - 保留 YNS StoreChat：后台启用后显示 AI 助手；中文界面、服务推荐和人工客服入口。
 - 首页与推荐卡片不提供购物车、在线支付或占位价格。模板原有商品、购物车和结账路由仍保留，正式开放销售前需单独配置、审阅。
 
@@ -73,20 +74,24 @@ pnpm exec next start
 
 有一点要区分：网页上的四项服务是本地展示内容；StoreChat 的“商品卡片”会从 YNS 在线商品目录检索，不能自动读取这些网页服务卡。现在服务知识可以放进 Store knowledge，让 AI 先用文字介绍并引导询价；目录里的项目不要填虚构金额。后续若要 AI 推荐商品卡，再按实际业务决定后台如何建可展示的真实项目。
 
-网站继续使用模板的 `/api/chat` 平台接口。只有企业微信个人联系二维码时，网页能提供的动作是“扫码添加后聊天”，不是直接嵌入企业微信会话。
+网站继续使用模板的 `/api/chat` 平台接口。客服入口只有个人微信二维码，网页能提供的动作是“扫码添加后聊天”，不是直接嵌入微信会话。
 
 ## 素材与维护
 
 - Logo：`public/oceancast-logo.png`；网页图标：`public/oceancast-icon.svg`。
 - 案例：`public/cases/handmade-jewelry-watercolor.png`。
-- 企业微信：`public/contact/wecom-contact.jpg`。保留原始图像，页面用 CSS 取景显示二维码，图像不经优化器重编码。
+- 客服二维码：`public/contact/kefu-1.png`（客服一号）、`public/contact/kefu-2.png`（客服二号）。均为 640×640 正方形，已裁掉原图上下多余部分并做无损调色板量化，去掉 JPEG 噪点。
+- AI 学习海报：`public/ai-learning/poster.webp`，1200×1700 WebP，由 2400×3400 母版缩小。
 - 服务内容：`components/sections/services.tsx`。
 - 作品内容：`components/sections/portfolio.tsx`。
 - 客服板块：`components/sections/customer-service.tsx`。
+- AI 学习页：`app/ai-learning/page.tsx`。
 - 品牌样式：`app/globals.css` 中的 OceanCast 部分。
-- 页面只使用已确认公开的公司名称、Logo、案例与联系卡；没有加入校园介绍 HTML 里的个人资料。
+- 页面只使用已确认公开的公司名称、Logo、案例与二维码素材；没有加入校园介绍 HTML 里的个人资料。
 
-替换企业微信联系卡时，应同时调整 `.wecom-qr img` 的 CSS 取景位置，确保二维码与四周白边完整可见。联系卡打开后可保存到手机，使用微信识别。
+`public/contact/wecom-contact.jpg` 是原先的企业微信联系卡，现已不被页面引用，留作备份。
+
+更换客服二维码时直接替换同名 PNG 即可：`.qr-box` 是固定正方形白底框、图片按原尺寸铺满，不再需要调整取景参数。换图后建议用二维码识别库（如 `pyzbar`）验证一次可扫性。
 
 ## GitHub 与托管
 
@@ -96,10 +101,10 @@ pnpm exec next start
 
 这里要区分两件事：
 
-- Pages 上的是**静态快照**，只呈现视觉页面（首屏、服务、作品、客服二维码），没有购物车、订单、支付和 AI 对话。它由离线预览单页拆分资源得到，不是 Next.js 的构建产物。
+- Pages 上的是**静态快照**，只呈现视觉页面（首屏、服务、作品、客服双二维码、AI 学习页），没有购物车、订单、支付和 AI 对话。它由离线预览单页拆分资源得到，不是 Next.js 的构建产物。
 - 完整功能（YNS 后台数据、StoreChat AI 对话）仍需要带服务器与私有环境变量的托管环境，例如 Vercel。GitHub Pages 无法运行这套应用。
 
-静态快照的构成：`index.html`、`assets/`、`oceancast-icon.svg` 和 `.nojekyll`。改过首页文案或素材后，需要重新生成并推送 `gh-pages` 分支才会生效。
+静态快照的构成：`index.html`、`ai-learning.html`、`assets/`、`oceancast-icon.svg` 和 `.nojekyll`。`ai-learning.html` 由 `index.html` 派生，复用同一套内联样式与页头页脚，站内锚点改写成回首页的绝对锚点。改过首页文案或素材后，需要重新生成并推送 `gh-pages` 分支才会生效。
 
 上传前确认：`.env.local`、真实密钥、`node_modules`、`.next` 不在 Git 追踪列表。保留原模板的 `LICENSE.md` 版权与许可说明。
 
